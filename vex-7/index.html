@@ -162,99 +162,93 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const gamesList = [
-        { name: "Vex 5" },
-        { name: "Vex 6" },
-        { name: "Fireboy and Watergirl 3: Ice Temple" },
-        { name: "Car Simulator Arena" },
-        { name: "Merge Party" },
-        { name: "Blumgi Dragon" },
-        { name: "Parking Fury 3D: Beach City" },
-        { name: "Moto Space Racing: 2 Player" },
-        { name: "Snake.is MLG Edition" },
-        { name: "Friday Night Funkin vs XE" },
-        { name: "Just Park It 11" },
-        { name: "Truck Loader 4" },
-        { name: "Truck Loader 5" },
-        { name: "Friday Night Funkin' Week 7" },
-        { name: "Dino Bros" },
-        { name: "Element Blocks" },
-        { name: "Burnout Extreme Drift 2" },
-        { name: "Bouncy Basketball" },
-        { name: "Duo Vikings 3" },
-        { name: "Off-Road Rain Cargo Simulator" },
-        { name: "Shape Fold Animals" },
-        { name: "Double Panda" },
-        { name: "Truck Loader 2" },
-        { name: "Retro Highway" },
-        { name: "Orange Game" },
-        { name: "Extreme Off-Road Cars" },
-        { name: "Level Devil" },
-        { name: "Hills Of Steel" },
-        { name: "Traffic Rush" },
-        { name: "Football Blitz" },
-        { name: "ZOOM-BE" },
-        { name: "Pack A Bag" },
-        { name: "Friday Night Funkin vs Shaggy x Matt" },
-        { name: "Fireboy and Watergirl 2: Light Temple" },
-        { name: "Two Button Bounce" },
-        { name: "Duo Survival" },
-        { name: "Slalom Hero" },
-        { name: "Monster Tracks" },
-        { name: "Stack Game" },
-        { name: "House Of Hazards" },
-        { name: "Blumgi Ball" },
-        { name: "Highway Traffic" },
-        { name: "Jumping Shell" },
-        { name: "Moto Road Rash 3D" },
-        { name: "4th and Goal 2022" },
-        { name: "Stack Ball" },
-        { name: "Flappy Bird Origin" },
-        { name: "Getaway Shootout" },
-        { name: "Drive Mad" },
-        { name: "Top Speed Racing 3D" },
-        { name: "Idle Ants" },
-        { name: "Brain Test: Tricky Puzzles" },
-        { name: "The Impossible Quiz" },
-        { name: "Slope" },
-        { name: "Stickman Bike" },
-        { name: "Tunnel Rush" },
-        { name: "Idle Digging Tycoon" },
-        { name: "Moto X3M Winter" },
-        { name: "Offroader V5" },
-        { name: "Master Chess" },
-        { name: "Moto X3M 2" },
+        { name: "Vex 5", url: "vex-5" },
+        { name: "Vex 6", url: "vex-6" },
+        { name: "Fireboy and Watergirl 3: Ice Temple", url: "fireboy-watergirl-3-ice-temple" },
+        { name: "Car Simulator Arena", url: "car-simulator-arena" },
+        { name: "Merge Party", url: "merge-party" },
+        { name: "Blumgi Dragon", url: "blumgi-dragon" },
+        { name: "Parking Fury 3D: Beach City", url: "parking-fury-3d-beach-city" },
+        { name: "Moto Space Racing: 2 Player", url: "moto-space-racing-2-player" },
+        { name: "Snake.is MLG Edition", url: "snake-is-mlg-edition" },
+        { name: "Friday Night Funkin vs XE", url: "friday-night-funkin-vs-xe" },
+        { name: "Just Park It 11", url: "just-park-it-11" },
+        { name: "Truck Loader 4", url: "truck-loader-4" },
+        { name: "Truck Loader 5", url: "truck-loader-5" },
+        { name: "Friday Night Funkin' Week 7", url: "friday-night-funkin-week-7" },
+        { name: "Dino Bros", url: "dino-bros" },
+        { name: "Element Blocks", url: "element-blocks" },
+        { name: "Burnout Extreme Drift 2", url: "burnout-extreme-drift-2" },
+        { name: "Bouncy Basketball", url: "bouncy-basketball" },
+        { name: "Duo Vikings 3", url: "duo-vikings-3" },
+        { name: "Off-Road Rain Cargo Simulator", url: "off-road-rain-cargo-simulator" },
+        { name: "Shape Fold Animals", url: "shape-fold-animals" },
+        { name: "Double Panda", url: "double-panda" },
+        { name: "Truck Loader 2", url: "truck-loader-2" },
+        { name: "Retro Highway", url: "retro-highway" },
+        { name: "Orange Game", url: "orange-game" },
+        { name: "Extreme Off-Road Cars", url: "extreme-off-road-cars" },
+        { name: "Level Devil", url: "level-devil" },
+        { name: "Hills Of Steel", url: "hills-of-steel" },
+        { name: "Traffic Rush", url: "traffic-rush" },
+        { name: "Football Blitz", url: "football-blitz" },
+        { name: "ZOOM-BE", url: "zoom-be" },
+        { name: "Pack A Bag", url: "pack-a-bag" },
+        { name: "Friday Night Funkin vs Shaggy x Matt", url: "friday-night-funkin-vs-shaggy-x-matt" },
+        { name: "Fireboy and Watergirl 2: Light Temple", url: "fireboy-and-watergirl-2-light-temple" },
+        { name: "Two Button Bounce", url: "two-button-bounce" },
+        { name: "Duo Survival", url: "duo-survival" },
+        { name: "Slalom Hero", url: "slalom-hero" },
+        { name: "Monster Tracks", url: "monster-tracks" },
+        { name: "Stack Game", url: "stack-game" },
+        { name: "House Of Hazards", url: "house-of-hazards" },
+        { name: "Blumgi Ball", url: "blumgi-ball" },
+        { name: "Highway Traffic", url: "highway-traffic" },
+        { name: "Jumping Shell", url: "jumping-shell" },
+        { name: "Moto Road Rash 3D", url: "moto-road-rash-3d" },
+        { name: "4th and Goal 2022", url: "4th-and-goal-2022" },
+        { name: "Stack Ball", url: "stack-ball" },
+        { name: "Flappy Bird Origin", url: "flappy-bird-origin" },
+        { name: "Getaway Shootout", url: "getaway-shootout" },
+        { name: "Drive Mad", url: "drive-mad" },
+        { name: "Top Speed Racing 3D", url: "top-speed-racing-3d" },
+        { name: "Idle Ants", url: "idle-ants" },
+        { name: "Brain Test: Tricky Puzzles", url: "brain-test-tricky-puzzles" },
+        { name: "The Impossible Quiz", url: "the-impossible-quiz" },
+        { name: "Slope", url: "slope" },
+        { name: "Stickman Bike", url: "stickman-bike" },
+        { name: "Tunnel Rush", url: "tunnel-rush" },
+        { name: "Idle Digging Tycoon", url: "idle-digging-tycoon" },
+        { name: "Moto X3M Winter", url: "moto-x3m-winter" },
+        { name: "Offroader V5", url: "offroader-v5" },
+        { name: "Master Chess", url: "master-chess" },
+        { name: "Moto X3M 2", url: "moto-x3m-2" },
+        // ... Add more games as needed
     ];
 
     const container = document.querySelector('.gamesContainer'); // Make sure this matches the container in your HTML
 
     gamesList.forEach(game => {
-        // Create anchor element for each game
         const gameLink = document.createElement('a');
-        gameLink.href = game.url;
-        gameLink.classList.add('game-item', 'col-lg-2', 'col-md-4', 'col-6', 'grid-3');
+        gameLink.href = `https://akoppee.github.io/fun-stuff/vex-7/${game.url}.html`;
+        gameLink.classList.add('game-item', 'col-lg-2', 'col-md-4', 'col-6');
 
-        // Create the container for the game image
-        const thumbnailContainer = document.createElement('div');
-        thumbnailContainer.classList.add('list-thumbnail');
+        const thumbnailDiv = document.createElement('div');
+        thumbnailDiv.classList.add('list-thumbnail');
 
-        // Create image element
         const gameImage = document.createElement('img');
-        const imageName = game.name.replace(/\s+/g, '-').toLowerCase() + '.png';
-        gameImage.src = `https://tvz3gstore.github.io/img/${imageName}`;
+        gameImage.src = `https://tvz3gstore.github.io/img/${game.url}.png`;
         gameImage.alt = game.name;
-        gameImage.classList.add('game-image', 'lazyload');
+        gameImage.classList.add('lazyload');
 
-        // Append image to its container
-        thumbnailContainer.appendChild(gameImage);
+        thumbnailDiv.appendChild(gameImage);
+        gameLink.appendChild(thumbnailDiv);
 
-        // Append image container to link
-        gameLink.appendChild(thumbnailContainer);
-
-        // Append link to the main container
         container.appendChild(gameLink);
     });
 });
 </script>
+
 
 
 
