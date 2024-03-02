@@ -202,31 +202,34 @@ document.addEventListener("DOMContentLoaded", function() {
         { name: "Moto X3M 2" },
     ];
 
-    function loadGames() {
-        const container = document.querySelector('.gamesContainer'); // Ensure this selector matches your container's class or ID
+    const container = document.querySelector('.gamesContainer'); // Make sure this matches the container in your HTML
 
-        gamesList.forEach(game => {
-            const gameTile = document.createElement('div');
-            gameTile.classList.add('game-tile');
+    gamesList.forEach(game => {
+        // Create anchor element for each game
+        const gameLink = document.createElement('a');
+        gameLink.href = game.url;
+        gameLink.classList.add('game-item', 'col-lg-2', 'col-md-4', 'col-6', 'grid-3');
 
-            const gameImage = document.createElement('img');
-            const imageName = game.name.replace(/\s+/g, '-').toLowerCase() + '.png';
-            gameImage.src = `https://tvz3gstore.github.io/img/${imageName}`;
-            gameImage.alt = game.name;
-            gameImage.classList.add('game-image');
+        // Create the container for the game image
+        const thumbnailContainer = document.createElement('div');
+        thumbnailContainer.classList.add('list-thumbnail');
 
-            const gameTitle = document.createElement('div');
-            gameTitle.textContent = game.name;
-            gameTitle.classList.add('game-title');
+        // Create image element
+        const gameImage = document.createElement('img');
+        const imageName = game.name.replace(/\s+/g, '-').toLowerCase() + '.png';
+        gameImage.src = `https://tvz3gstore.github.io/img/${imageName}`;
+        gameImage.alt = game.name;
+        gameImage.classList.add('game-image', 'lazyload');
 
-            gameTile.appendChild(gameImage);
-            gameTile.appendChild(gameTitle);
+        // Append image to its container
+        thumbnailContainer.appendChild(gameImage);
 
-            container.appendChild(gameTile);
-        });
-    }
+        // Append image container to link
+        gameLink.appendChild(thumbnailContainer);
 
-    loadGames(); // Call loadGames directly without window.onload
+        // Append link to the main container
+        container.appendChild(gameLink);
+    });
 });
 </script>
 
