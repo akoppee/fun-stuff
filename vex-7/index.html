@@ -137,98 +137,99 @@
 </div> <!-- end container -->
 
 <script>
-// Define your list of games
-const gamesList = [
-    { name: "Vex 5" },
-    { name: "Vex 6" },
-    { name: "Fireboy and Watergirl 3: Ice Temple" },
-    { name: "Car Simulator Arena" },
-    { name: "Merge Party" },
-    { name: "Blumgi Dragon" },
-    { name: "Parking Fury 3D: Beach City" },
-    { name: "Moto Space Racing: 2 Player" },
-    { name: "Snake.is MLG Edition" },
-    { name: "Friday Night Funkin vs XE" },
-    { name: "Just Park It 11" },
-    { name: "Truck Loader 4" },
-    { name: "Truck Loader 5" },
-    { name: "Friday Night Funkin' Week 7" },
-    { name: "Dino Bros" },
-    { name: "Element Blocks" },
-    { name: "Burnout Extreme Drift 2" },
-    { name: "Bouncy Basketball" },
-    { name: "Duo Vikings 3" },
-    { name: "Off-Road Rain Cargo Simulator" },
-    { name: "Shape Fold Animals" },
-    { name: "Double Panda" },
-    { name: "Truck Loader 2" },
-    { name: "Retro Highway" },
-    { name: "Orange Game" },
-    { name: "Extreme Off-Road Cars" },
-    { name: "Level Devil" },
-    { name: "Hills Of Steel" },
-    { name: "Traffic Rush" },
-    { name: "Football Blitz" },
-    { name: "ZOOM-BE" },
-    { name: "Pack A Bag" },
-    { name: "Friday Night Funkin vs Shaggy x Matt" },
-    { name: "Fireboy and Watergirl 2: Light Temple" },
-    { name: "Two Button Bounce" },
-    { name: "Duo Survival" },
-    { name: "Slalom Hero" },
-    { name: "Monster Tracks" },
-    { name: "Stack Game" },
-    { name: "House Of Hazards" },
-    { name: "Blumgi Ball" },
-    { name: "Highway Traffic" },
-    { name: "Jumping Shell" },
-    { name: "Moto Road Rash 3D" },
-    { name: "4th and Goal 2022" },
-    { name: "Stack Ball" },
-    { name: "Flappy Bird Origin" },
-    { name: "Getaway Shootout" },
-    { name: "Drive Mad" },
-    { name: "Top Speed Racing 3D" },
-    { name: "Idle Ants" },
-    { name: "Brain Test: Tricky Puzzles" },
-    { name: "The Impossible Quiz" },
-    { name: "Slope" },
-    { name: "Stickman Bike" },
-    { name: "Tunnel Rush" },
-    { name: "Idle Digging Tycoon" },
-    { name: "Moto X3M Winter" },
-    { name: "Offroader V5" },
-    { name: "Master Chess" },
-    { name: "Moto X3M 2" },
-    // Add more games as needed
-];
+document.addEventListener("DOMContentLoaded", function() {
+    const gamesList = [
+        { name: "Vex 5" },
+        { name: "Vex 6" },
+        { name: "Fireboy and Watergirl 3: Ice Temple" },
+        { name: "Car Simulator Arena" },
+        { name: "Merge Party" },
+        { name: "Blumgi Dragon" },
+        { name: "Parking Fury 3D: Beach City" },
+        { name: "Moto Space Racing: 2 Player" },
+        { name: "Snake.is MLG Edition" },
+        { name: "Friday Night Funkin vs XE" },
+        { name: "Just Park It 11" },
+        { name: "Truck Loader 4" },
+        { name: "Truck Loader 5" },
+        { name: "Friday Night Funkin' Week 7" },
+        { name: "Dino Bros" },
+        { name: "Element Blocks" },
+        { name: "Burnout Extreme Drift 2" },
+        { name: "Bouncy Basketball" },
+        { name: "Duo Vikings 3" },
+        { name: "Off-Road Rain Cargo Simulator" },
+        { name: "Shape Fold Animals" },
+        { name: "Double Panda" },
+        { name: "Truck Loader 2" },
+        { name: "Retro Highway" },
+        { name: "Orange Game" },
+        { name: "Extreme Off-Road Cars" },
+        { name: "Level Devil" },
+        { name: "Hills Of Steel" },
+        { name: "Traffic Rush" },
+        { name: "Football Blitz" },
+        { name: "ZOOM-BE" },
+        { name: "Pack A Bag" },
+        { name: "Friday Night Funkin vs Shaggy x Matt" },
+        { name: "Fireboy and Watergirl 2: Light Temple" },
+        { name: "Two Button Bounce" },
+        { name: "Duo Survival" },
+        { name: "Slalom Hero" },
+        { name: "Monster Tracks" },
+        { name: "Stack Game" },
+        { name: "House Of Hazards" },
+        { name: "Blumgi Ball" },
+        { name: "Highway Traffic" },
+        { name: "Jumping Shell" },
+        { name: "Moto Road Rash 3D" },
+        { name: "4th and Goal 2022" },
+        { name: "Stack Ball" },
+        { name: "Flappy Bird Origin" },
+        { name: "Getaway Shootout" },
+        { name: "Drive Mad" },
+        { name: "Top Speed Racing 3D" },
+        { name: "Idle Ants" },
+        { name: "Brain Test: Tricky Puzzles" },
+        { name: "The Impossible Quiz" },
+        { name: "Slope" },
+        { name: "Stickman Bike" },
+        { name: "Tunnel Rush" },
+        { name: "Idle Digging Tycoon" },
+        { name: "Moto X3M Winter" },
+        { name: "Offroader V5" },
+        { name: "Master Chess" },
+        { name: "Moto X3M 2" },
+    ];
 
-    const container = document.getElementById('gamesContainer');
+    function loadGames() {
+        const container = document.querySelector('.gamesContainer'); // Ensure this selector matches your container's class or ID
 
-    gamesList.forEach(game => {
-        const gameTile = document.createElement('div');
-        gameTile.classList.add('game-tile');
+        gamesList.forEach(game => {
+            const gameTile = document.createElement('div');
+            gameTile.classList.add('game-tile');
 
-        const gameImage = document.createElement('img');
-        const imageName = game.name.replace(/\s+/g, '-').toLowerCase() + '.png';
-        gameImage.src = `https://tvz3gstore.github.io/img/${imageName}`;
-        gameImage.alt = game.name;
-        gameImage.classList.add('game-image');
+            const gameImage = document.createElement('img');
+            const imageName = game.name.replace(/\s+/g, '-').toLowerCase() + '.png';
+            gameImage.src = `https://tvz3gstore.github.io/img/${imageName}`;
+            gameImage.alt = game.name;
+            gameImage.classList.add('game-image');
 
-        const gameTitle = document.createElement('div');
-        gameTitle.textContent = game.name;
-        gameTitle.classList.add('game-title');
+            const gameTitle = document.createElement('div');
+            gameTitle.textContent = game.name;
+            gameTitle.classList.add('game-title');
 
-        gameTile.appendChild(gameImage);
-        gameTile.appendChild(gameTitle);
+            gameTile.appendChild(gameImage);
+            gameTile.appendChild(gameTitle);
 
-        container.appendChild(gameTile);
-    });
+            container.appendChild(gameTile);
+        });
+    }
+
+    loadGames(); // Call loadGames directly without window.onload
 });
-
-// Call the function when the window loads
-window.onload = loadGames;
 </script>
+
 
 
 
